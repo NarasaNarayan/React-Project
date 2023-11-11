@@ -3,7 +3,7 @@ import './Home.css'
 import { Link } from 'react-router-dom'
 import { tours } from './Toures'
 import { store1 } from '../App'
-const Home = ({addtocart}) => {
+const Home = ({addtocart,ProductShow}) => {
 
 const [search,setsearch]=useState('')
 const [islogin,setislogin]=useContext(store1)
@@ -77,7 +77,7 @@ const [islogin,setislogin]=useContext(store1)
            
             <div key={index} class=" col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 shadow-lg pb-4">
               <div class="card" >
-                <img className='img-fluid ' src={value.photo} class="card-img-top" alt="..."/>
+                <img className='img-fluid ' src={value.photo} class="card-img-top" alt="..." onClick={()=>ProductShow(value)}/>
                   <div class="card-body">
                   <div className='d-flex  justify-content-between'>
                   <span>{value.city}</span>
