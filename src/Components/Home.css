@@ -1,0 +1,11 @@
+input{
+    border: none;
+}
+.gallery{
+    transition: 3s;
+    
+}
+.gallery:hover{
+    scale: 1.1;
+    cursor: pointer;
+}
