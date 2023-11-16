@@ -1,9 +1,20 @@
-import React, { useState,useContext } from 'react'
+import React, { useState,useContext, useEffect } from 'react'
 import './Home.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { tours } from './Toures'
 import { store1 } from '../App'
-const Home = ({addtocart,ProductShow}) => {
+const Home = ({addtocart,login,ProductShow}) => {
+  const navigate=useNavigate()
+const show=(Product)=>{
+    ProductShow(Product)
+    navigate('/Myshow')
+
+}
+
+useEffect(() => {
+  if(!login) navigate("/")
+}, [login])
+
 
 const [search,setsearch]=useState('')
 const [islogin,setislogin]=useContext(store1)
@@ -11,7 +22,7 @@ const [islogin,setislogin]=useContext(store1)
     return (
         
         <div>
-            <div class="container text-left pt-4 pb-4 shadow-lg pb-4">
+            <div class="container text-left pt-4 mt-5 pb-4">
                 <div class="row align-items-start">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                         <div className='d-flex  align-items-center '>
@@ -77,7 +88,7 @@ const [islogin,setislogin]=useContext(store1)
            
             <div key={index} class=" col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 shadow-lg pb-4">
               <div class="card" >
-                <img className='img-fluid ' src={value.photo} class="card-img-top" alt="..." onClick={()=>ProductShow(value)}/>
+                <img className='img-fluid ' src={value.photo} class="card-img-top" alt="..." onClick={()=>show(value)}/>
                   <div class="card-body">
                   <div className='d-flex  justify-content-between'>
                   <span>{value.city}</span>
@@ -101,8 +112,7 @@ const [islogin,setislogin]=useContext(store1)
         
       </div>
       </div>
-
-
+ 
                 
 
             {/* best services  */} 

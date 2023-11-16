@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const Footer = () => {
   return (
     <div>
-        <div className="container text-left ">
+        <div className="container-fluid text-left ">
   <div className="row shadow-lg">
     <div className="col-12 col-sm-12 col-md-3 col-lg-3">
       <img style={{height:'30px'}} src={require('../assets/images/logo.png')} alt='' />

@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React, { createContext, useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
@@ -11,7 +11,7 @@ import Registar from './Components/Registar';
 import Login from './Components/Login';
 import Footer from './Components/Footer';
 import Cart from './Components/Cart';
-import productShoww from './Components/ProductShow';
+import Myshow from './Components/Myshow';
 
 
 
@@ -24,14 +24,28 @@ function App() {
 
   const [name, setname] = useState('')
   const [islogin, setislogin] = useState(false)
-  const [cart, setcart] = useState([''])
+  const [cart, setcart] = useState([])
   const [product, setproduct] = useState([])
+  const [user, setuser] = useState({})
+  const [totalprice, settotalprice] = useState(0)
 
 
+  useEffect(() => {
+    loadData()
+  }, [])
+
+  let loadData = () => {
+    const user = JSON.parse(localStorage.getItem('loggedInUser'))
+    console.log(user);
+    if (user !== null) {
+      setuser(user)
+      setislogin(true)
+    }
+  }
 
   const addtocart = (product) => {
-    const quantity=1
-    const totalprice=0
+    const quantity = 1
+    const totalprice = 0
 
     const existingProduct = cart.find(item => item.id === product.id);
 
@@ -41,21 +55,68 @@ function App() {
         item.id === product.id ? { ...item, quantity: item.quantity + 1, } : item
       ));
     } else {
-      setcart([...cart, { ...product,quantity: 1,totalprice:0 }]);
+      setcart([...cart, { ...product, quantity: 1 }]);
     }
 
   };
 
-  const ProductShow=(productShow)=>{
-    console.log(productShow);
-     setproduct({...product,productShow})
-     console.log(product);
+
+
+
+  const increment = (product) => {
+
+    setcart(cart.map(item =>
+      item.id === product.id ? { ...item, quantity: item.quantity + 1, } : item
+    ));
+
   }
-  const removehandler=(itemId=>{
-    const updatedcart=cart.filter(product=>product.id !==itemId.id);
+
+  const decrement = (product) => {
+    const quantity = product.quantity - 1
+
+    if (quantity === 0) {
+      cart.findIndex((item, index) => {
+        if (item.id === product.id) {
+          cart.splice(index, 1)
+
+        }
+      })
+
+    }
+
+
+
+    setcart(cart.map(item =>
+      item.id === product.id ? { ...item, quantity: item.quantity - 1, } : item
+    ));
+
+  }
+
+  const ProductShow = (product) => {
+    console.log(product);
+    setproduct([product])
+    // addprice()
+  }
+
+  // const addprice = (item) => {
+  //   setproduct(product.map(item =>
+  //     item.id === product.id ? { ...item, totalprice: item.quantity *item.price, } : item
+  //   ));
+  
+
+  // }
+  const removehandler = (itemId => {
+    const updatedcart = cart.filter(product => product.id !== itemId.id);
     setcart(updatedcart)
   })
-  
+  const handleLogout = () => {
+    setuser({})
+    setislogin(false)
+  }
+  const handleLogin = () => {
+    loadData()
+  }
+
   return (
     <div>
       <BrowserRouter >
@@ -64,23 +125,28 @@ function App() {
 
 
 
-              <Header />
-              <Routes>
-                <Route path='/Home' element={<Home addtocart={addtocart} ProductShow={ProductShow}/>} />
-
-                <Route path='/About' element={<About  />} />
-                <Route path='/Toures' element={<Toures addtocart={addtocart} />} />
-                <Route path='/' element={<Registar />} />
-                <Route path='/Login' element={<Login />} />
-              <Route path='/Cart' element={<Cart cart={cart} removehandler={removehandler} />} />
-              <Route path='/ProductShow' element={<ProductShow />} />
+            <Header user={user} login={islogin} handleLogout={handleLogout} />
+            <Routes>
+              <Route path='/home' element={<Home login={islogin} addtocart={addtocart} ProductShow={ProductShow} product={product} />} />
 
 
+              <Route path='/hbout' element={<About />} />
+              <Route path='/toures' element={<Toures addtocart={addtocart} login={islogin} />} />
+              <Route path='/' element={<Registar login={islogin} />} />
+              <Route path='/login' element={<Login login={islogin} handleLogin={handleLogin} />} />
+              <Route path='/cart' element={<Cart cart={cart} removehandler={removehandler} increment={increment} decrement={decrement} totalprice={totalprice} />} />
+              <Route path='/myshow' element={<Myshow product={product} />} />
 
 
 
-              </Routes>
-              <Footer />
+
+
+
+
+
+
+            </Routes>
+            <Footer />
 
           </store1.Provider>
 
