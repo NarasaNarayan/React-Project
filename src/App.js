@@ -94,7 +94,8 @@ function App() {
 
   const ProductShow = (product) => {
     console.log(product);
-    setproduct([product])
+    setproduct(product)
+    console.log("data",product);
     // addprice()
   }
 
@@ -147,7 +148,6 @@ function App() {
 
             </Routes>
             <Footer />
-
           </store1.Provider>
 
         </store.Provider>
