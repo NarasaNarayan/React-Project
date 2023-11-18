@@ -88,7 +88,7 @@ const Login = ({ login, handleLogin }) => {
                             <h3 className='text-white mb-4'>Login</h3>
                             <div className="mb-3 row  ">
                                 <div class="col ">
-                                    <input type="email" name="email" value={user.email} onChange={setUserData} style={{ width: '100%' }} class="form-control" placeholder='Email' />
+                                    <input type="email" name="email" value={user.email} onChange={setUserData} style={{ width: '80%' }} class="form-control" placeholder='Email' />
                                 </div>
                             </div>
                             <div classNameass="mb-3 row">

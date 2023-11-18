@@ -41,7 +41,7 @@ const Header = ({ user, login, handleLogout }) => {
               }
                 {login ? 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/Login">{user.username}</Link>
+                    <Link className="nav-link " to="/Login">{user.username}</Link>
                   </li>
                   :
                   <li className="nav-item">

@@ -40,11 +40,11 @@ const [islogin,setislogin]=useContext(store1)
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, quod optio? Quidem eos placeat corporis pariatur sed aut eveniet optio quod vero exercitationem nam, velit corrupti esse id dolores soluta. Ipsa molestiae, sequi officiis provident, enim dolores eos, corrupti aspernatur illum eum reprehenderit. Laborum quo voluptatum in, rerum ex saepe?</p>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-flex">
-                        <img className='img-fluid' style={{ width: '150px', height: '300px', borderRadius: '20px', margin: '20px', border: '2px solid yellow' }} src={require('../assets/images/hero-img01.jpg')} alt='logo' />
+                        <img className='img-fluid' style={{objectFit:'cover', width: '150px', height: '300px', borderRadius: '20px', margin: '20px', border: '2px solid yellow' }} src={require('../assets/images/hero-img01.jpg')} alt='logo' />
 
                         <video style={{objectFit:'cover', width: '150px', height: '300px', borderRadius: '10px', marginTop: '50px', border: '2px solid yellow' }} controls autoPlay src={require('../assets/images/hero-video.mp4')}></video>
 
-                        <img className='img-fluid' style={{ width: '150px', height: '300px', borderRadius: '20px', margin: '20px', marginTop: '80px', border: '2px solid yellow' }} src={require('../assets/images/hero-img02.jpg')} alt='logo' />
+                        <img className='img-fluid' style={{objectFit:'cover', width: '150px', height: '300px', borderRadius: '20px', margin: '20px', marginTop: '80px', border: '2px solid yellow' }} src={require('../assets/images/hero-img02.jpg')} alt='logo' />
                     </div>
 
                 </div>
@@ -82,18 +82,20 @@ const [islogin,setislogin]=useContext(store1)
                 if(search==''){
                     return value;
                 }
+               
                 else if(value.title.toLowerCase().includes(search.toLowerCase())){
                     return value;
                 }
+            
             })
            
             .
            
           map((value, index) => (
            
-            <div key={index} class=" col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 shadow-lg pb-4">
+            <div key={index} class=" col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 shadow-sm pb-4">
               <div class="card" >
-                <img className='img-fluid ' src={value.photo} class="card-img-top" alt="..." onClick={()=>show(value)}/>
+                <img className='img-fluid '  src={value.photo} class="card-img-top" alt="..." onClick={()=>show(value)}/>
                   <div class="card-body">
                   <div className='d-flex  justify-content-between'>
                   <span>{value.city}</span>

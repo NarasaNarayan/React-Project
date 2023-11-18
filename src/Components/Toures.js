@@ -166,8 +166,13 @@ export const tours = [
   },
 ];
 
-const Toures = ({ addtocart,login }) => {
- const navigate=useNavigate()
+const Toures = ({ addtocart,login,ProductShow }) => {
+  const navigate=useNavigate()
+const show=(Product)=>{
+    ProductShow(Product)
+    navigate('/Myshow')
+}
+
   useEffect(() => {
     if(!login) navigate("/")
   }, [login])
@@ -191,7 +196,7 @@ const Toures = ({ addtocart,login }) => {
           {tours.map((item, index) => (
             <div key={index} class=" col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 shadow-lg pb-4">
               <div class="card" >
-                <img className='img-fluid ' src={item.photo} class="card-img-top" alt="..." />
+                <img className='img-fluid '   src={item.photo} onClick={()=>show(item)} class="card-img-top" alt="..." />
                 <div class="card-body">
                   <div className='d-flex  justify-content-between'>
                     <span>{item.city}</span>
@@ -239,4 +244,4 @@ const Toures = ({ addtocart,login }) => {
   )
 }
 
-export default Toures
+export default Toures;
