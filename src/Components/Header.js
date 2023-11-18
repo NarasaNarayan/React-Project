@@ -15,7 +15,7 @@ const Header = ({ user, login, handleLogout }) => {
   }
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-lg ">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">      <img style={{ height: '30px' }} src={require('../assets/images/logo.png')} alt='' />
           </Link>

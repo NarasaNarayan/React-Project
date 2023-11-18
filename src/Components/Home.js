@@ -27,7 +27,7 @@ const [islogin,setislogin]=useContext(store1)
     return (
         //  Hero section start here 
         <div>
-            <div class="container text-left pt-4 mt-5 pb-4">
+            <div class="container text-left pt-4 mt-5 pb-4 ">
                 <div class="row align-items-start">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                         <div className='d-flex  align-items-center '>
