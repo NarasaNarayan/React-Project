@@ -99,7 +99,12 @@ const [islogin,setislogin]=useContext(store1)
                   <div class="card-body">
                   <div className='d-flex  justify-content-between'>
                   <span>{value.city}</span>
-                  <p class="card-title"><i class="fa-solid fa-star  text-warning"></i>Not rated</p>
+                  <p class="card-title"><i class="fa-regular fa-star fs-10"></i> 
+                  <i class="fa-regular fa-star fs-10"></i>
+                   <i class="fa-regular fa-star fs-10"></i> 
+                   <i class="fa-regular fa-star fs-10"></i>
+                   <i class="fa-regular fa-star fs-10"></i>
+                   Not rated</p>
 
 
 
