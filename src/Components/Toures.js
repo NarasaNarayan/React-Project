@@ -185,7 +185,7 @@ const show=(Product)=>{
         <div className="row">
           <div className="col">
             <span className='shadow-lg' style={{ position: 'relative', left: '45%', top: '11rem', color: 'white', fontSize: '2rem' }}>All Toures</span>
-            <img className='img-fluid' style={{ height: "20rem", width: '100%' }} src={require('../assets/images/tour.jpg')} alt="" />
+            <img  className='img-fluid' style={{ height: "20rem", width: '100%', objectFit:"cover" }} src={require('../assets/images/tour.jpg')} alt="" />
           </div>
         </div>
 

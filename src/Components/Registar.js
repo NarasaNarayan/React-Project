@@ -53,7 +53,9 @@ const Registar = ({login}) => {
     }
 
     return (
-        <div><div class="container text-center p-4 ">
+        <div>
+
+        {/* <div class="container text-center p-4 ">
             <div class="row align-items-end shadow-lg">
                 <div class=" col align-items-end mx-4">
                     <img className='img-fluid' style={{ height: '400px' }} src={require('../assets/images/register.png')} alt='' />
@@ -92,7 +94,39 @@ const Registar = ({login}) => {
                 </div>
 
             </div>
-        </div></div>
+        </div> */}
+
+        <div className="container pt-4 pb-4">
+                <div className="row">
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6  mx-auto my-auto align-items-center">
+                        <img classNameName='img-fluid' style={{ height: '400px' }} src={require('../assets/images/register.png')} alt='' />
+                    </div>
+
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6  ">
+                        <div className="card  text-center  ms-auto justify-content-left " style={{ border: 'none' }}>
+                            <div className="card-body m-auto bg-warning  w-50 pt-5 pb-5">
+                                <svg style={{color:'white'}} className="text-white" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-person-fill" viewBox="0 0 16 16" >
+                                    <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2m-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11" />
+                                </svg>
+                                <h2 className="text-center text-white pt-3 pb-3">Registar</h2>
+
+                                <input type="email" className="form-control pb-2  mb-3 " name="username" value={user.username} onChange={setUserData} placeholder="enter email" />
+                                <input type="email" className="form-control pb-2  mb-3 " name="email" value={user.email} onChange={setUserData} placeholder="enter email" />
+                                <input type="password" name="password" value={user.password} onChange={setUserData}  className="form-control pb-2 mb-3" placeholder="password" />
+                                <button className="btn btn-dark  text-center text-white form-control mb-3" onClick={submitHanler} >Create Account</button>
+                                <Link to="/Home" className="text-white list-unstyled text-decoration-none text-center m-auto " > Already do you have <br/> account?</Link> <br />
+
+                                <Link to='/Login' className="text-decoration-none ">Login</Link>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     )
 }
 

@@ -11,6 +11,7 @@ import BestService from './BestService'
 const Home = ({addtocart,login,ProductShow}) => {
   const navigate=useNavigate()
 const show=(Product)=>{
+    console.log('product',Product);
     ProductShow(Product)
     navigate('/Myshow')
 

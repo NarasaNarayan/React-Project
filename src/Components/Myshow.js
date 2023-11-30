@@ -17,7 +17,7 @@ const CloseHandler=()=>{
 }
 console.log(person);
   return (
-    <div className='container pt-5 pb-5 bg-white' >
+    <div className='container pt-5 pb-5 mb-5 bg-white' >
       <div className=' row ' style={{position: "relative"}}>
       <div style={{textAlign:'end'}}>
       <span style={{textAlign:'end',padding:"20px",backgroundColor:"black",color:'white'}} onClick={CloseHandler}><i class="fa-solid fa-x"></i></span>
