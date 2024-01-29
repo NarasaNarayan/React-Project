@@ -47,10 +47,10 @@ const Footer = () => {
     <div className="col-12 col-sm-12 col-md-3 col-lg-3 text-left">
     <h6>Contact</h6>
     <div>
-    <p><i className="fa-solid fa-address-book text-warning"></i> <span style={{fontWeight:'bolder'}}>Address:</span>  Shhivamogha, Karnataka</p>
+    <p><i className="fa-solid fa-address-book text-warning"></i> <span style={{fontWeight:'bolder'}}>Address:</span>  Bannerugatta, Bangalore, Karnataka</p>
     </div>
     <div>
-    <p><i className="fa-solid fa-envelope text-warning"></i> <span style={{fontWeight:'bolder'}}>Email:</span> abc.com</p>
+    <p><i className="fa-solid fa-envelope text-warning"></i> <span style={{fontWeight:'bolder'}}>Email:</span> Narasa201754@gmail.com.com</p>
     </div>
     <div>
     <p><i className="fa-solid fa-phone text-warning"></i> <span style={{fontWeight:'bolder'}}>Phone:</span> 6380673093</p>

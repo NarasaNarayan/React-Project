@@ -129,17 +129,17 @@ function App() {
 
 
 
-            <Header user={user} login={islogin} handleLogout={handleLogout} />
+            <Header user={user} login={islogin} cart={cart} handleLogout={handleLogout} />
             <Routes>
               <Route path='/home' element={<Home login={islogin} addtocart={addtocart} ProductShow={ProductShow} product={product} />} />
 
 
-              <Route path='/hbout' element={<About />} />
+              <Route path='/About' element={<About />} />
               <Route path='/toures' element={<Toures addtocart={addtocart} login={islogin}  ProductShow={ProductShow}  />} />
               <Route path='/' element={<Registar login={islogin} />} />
               <Route path='/login' element={<Login login={islogin} handleLogin={handleLogin} />} />
               <Route path='/cart' element={<Cart cart={cart} removehandler={removehandler} increment={increment} decrement={decrement} totalprice={totalprice} />} />
-              <Route path='/myshow' element={<Myshow product={product} />} />
+              <Route path='/myshow' element={<Myshow product={product} addtocart={addtocart} />} />
 
 
 

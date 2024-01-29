@@ -5,7 +5,7 @@ import { store } from '../App'
 import { store1 } from '../App'
 
 
-const Header = ({ user, login, handleLogout }) => {
+const Header = ({ user, login, handleLogout,cart }) => {
   const [color, setcolor] = useState('');
   const navigate = useNavigate()
   const logoutHandler = ()=>{
@@ -51,7 +51,8 @@ const Header = ({ user, login, handleLogout }) => {
                 
 
                 <li className="nav-item">
-                  <Link className="nav-link bg-warning  " to="/cart" style={{ borderRadius: '10px' }}> MyBookings</Link>
+                  <Link className="nav-link bg-warning  " to="/cart" style={{ borderRadius: '10px' }}> MyBookings  <span className='text-white bg-info p-1'>{cart.length}</span></Link>
+                 
                 </li>
 
 

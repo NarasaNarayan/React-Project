@@ -98,8 +98,8 @@ const Registar = ({login}) => {
 
         <div className="container pt-4 pb-4">
                 <div className="row">
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-6  mx-auto my-auto align-items-center">
-                        <img classNameName='img-fluid' style={{ height: '400px' }} src={require('../assets/images/register.png')} alt='' />
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-6  mx-auto my-auto d-flex align-items-center">
+                        <img classNameName='img-fluid' style={{width:'500px', height: '400px' }} src={require('../assets/images/register.png')} alt='' />
                     </div>
 
                     <div className="col-12 col-sm-12 col-md-6 col-lg-6  ">

@@ -54,21 +54,21 @@ const [islogin,setislogin]=useContext(store1)
             {/* location  distence search bar */}
 
             <div class="container text-left pt-4">
-                <div class="row align-items-start shadow-lg w-75 " style={{ borderRadius: '25px' }}>
-                    <div class="col " style={{ borderRight: '0.5px solid gray' }}>
-                        <p className='fs-5'> <i class="fa-solid fa-location-dot text-warning"></i>Location</p>
-                        <input value={search} onChange={(e)=>setsearch(e.target.value)}h type="text" placeholder='where are you going?' />
+                <div class="row align-items-start shadow-lg w-75 " style={{ borderRadius: '15px' }}>
+                    <div class="col " style={{ borderRight: '0.1px solid gray' }}>
+                        <p className='fs-5'> <i className="fa-solid fa-location-dot text-warning mx-2"></i>Location</p>
+                        <input className='form-control' value={search} onChange={(e)=>setsearch(e.target.value)}type="text" placeholder='where are you going?' />
                     </div>
-                    <div class="col" style={{ borderRight: '0.5px solid gray' }}>
-                        <p className='fs-5'><i class="fa-solid fa-location-dot text-warning"></i>Distence</p>
-                        <input type="text" placeholder='Distence k/M' />
+                    <div class="col" style={{ borderRight: '0.1px solid gray' }}>
+                        <p className='fs-5'><i className="fa-solid fa-location-dot text-warning mx-2"></i>Distence</p>
+                        <input className='form-control' type="text" placeholder='Distence k/M' />
                     </div>
                     <div class="col" >
-                        <p className='fs-5'><i class="fa-solid fa-people-roof text-warning"></i>Max People </p>
-                        <input type="text" placeholder='0' />
+                        <p className='fs-5 '><i class="fa-solid fa-people-roof text-warning m"></i>Max People </p>
+                        <input className='form-control' type="text" placeholder='0' />
                     </div>
                     <div class="col  mx-auto my-auto">
-                        <i class="fa-solid fa-magnifying-glass text-white " style={{ backgroundColor: 'orange', padding: '10px', borderTopLeftRadius: "10px ", borderBottomRightRadius: "10px " }}></i>
+                        <i class="fa-solid fa-magnifying-glass text-white fs-1 " style={{ backgroundColor: 'orange', padding: '10px', borderTopLeftRadius: "10px ", borderBottomRightRadius: "10px ",float:'right' }}></i>
                     </div>
 
                 </div>
@@ -81,7 +81,7 @@ const [islogin,setislogin]=useContext(store1)
         <div class="row">
             {tours.filter((value)=>{
                 if(search==''){
-                    return value;
+                    return value ;
                 }
                
                 else if(value.title.toLowerCase().includes(search.toLowerCase())){
