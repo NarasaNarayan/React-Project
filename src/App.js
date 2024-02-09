@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
 
+
 import Header from './Components/Header';
 import Home from './Components/Home';
 import About from './Components/About';
@@ -57,8 +58,11 @@ function App() {
       setcart(cart.map(item =>
         item.id === product.id ? { ...item, quantity: item.quantity + 1, } : item
       ));
+      alert('Toures Already in the Bookings')
     } else {
       setcart([...cart, { ...product, quantity: 1 }]);
+      alert('Toures Added to the Bookings')
+
     }
 
   };

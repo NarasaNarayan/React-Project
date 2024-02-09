@@ -51,7 +51,7 @@ const Header = ({ user, login, handleLogout,cart }) => {
                 
 
                 <li className="nav-item">
-                  <Link className="nav-link bg-warning  " to="/cart" style={{ borderRadius: '10px' }}> MyBookings  <span className='text-white bg-info p-1'>{cart.length}</span></Link>
+                  <Link className="nav-link " to="/cart" > MyBookings  <sup className='text-white bg-warning p-1' style={{ borderRadius: '30px' }}>{cart.length}</sup></Link>
                  
                 </li>
 

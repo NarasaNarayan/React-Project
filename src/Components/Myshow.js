@@ -20,7 +20,7 @@ const Myshow = ({ product,addtocart }) => {
     <div className='container pt-5 pb-5 mb-5 bg-white' >
       <div className=' row ' style={{ position: "relative" }}>
         <div style={{ textAlign: 'end' }}>
-          <span style={{ textAlign: 'end', padding: "20px", backgroundColor: "red", color: 'white' }} onClick={CloseHandler}><i class="fa-solid fa-x"></i></span>
+          <span style={{ textAlign: 'end', padding: "10px", backgroundColor: "yellow", color: 'white' }} onClick={CloseHandler}><i class="fa-solid fa-x"></i></span>
 
         </div>
 

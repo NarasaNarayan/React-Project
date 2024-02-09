@@ -110,7 +110,7 @@ const Registar = ({login}) => {
                                 </svg>
                                 <h2 className="text-center text-white pt-3 pb-3">Registar</h2>
 
-                                <input type="email" className="form-control pb-2  mb-3 " name="username" value={user.username} onChange={setUserData} placeholder="enter email" />
+                                <input type="email" className="form-control pb-2  mb-3 " name="username" value={user.username} onChange={setUserData} placeholder="enter name" />
                                 <input type="email" className="form-control pb-2  mb-3 " name="email" value={user.email} onChange={setUserData} placeholder="enter email" />
                                 <input type="password" name="password" value={user.password} onChange={setUserData}  className="form-control pb-2 mb-3" placeholder="password" />
                                 <button className="btn btn-dark  text-center text-white form-control mb-3" onClick={submitHanler} >Create Account</button>
